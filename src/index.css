@@ -1,0 +1,27 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/fonts.css);
+
+body {
+  margin: 0;
+  background-color: #202020;
+  color: #FFFFFF;
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+.link {
+  text-decoration: none;
+  transition: 2s;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.2;
+    transition: 2s;
+  }
+}
