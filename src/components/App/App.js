@@ -4,16 +4,26 @@ import './App.css';
 import PageNotFound from '../PageNotFound/PageNotFound';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
+import Footer from '../Footer/Footer';
+import Register from '../Register/Register';
+import Header1 from '../Header/Header1';
+import SearchForm from '../SearchForm/SearchForm';
+import MoviesCard from "../MoviesCard/MoviesCard"
 
 function App() {
   return (
     <BrowserRouter>
+    <Header1/>
     <Header/>
+    <SearchForm/>
+    <MoviesCard/>
     <Main/>
     <Routes>
-        <Route path='*' element={<PageNotFound />} />
+        <Route path='*' component={<PageNotFound />} />
+        <Route path="/" component={<Main/>} />
+        <Route path="/signup" component={<Register />} />
     </Routes>
-
+    <Footer/>
     </BrowserRouter>
 
 /*

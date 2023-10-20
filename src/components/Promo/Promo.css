@@ -1,17 +1,18 @@
-.about {
+.promo {
   background-color: #073042;
-  min-height: 648px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 100px;
+  align-items: top;
+  padding: 75px 70px;
   border: 3px solid white;
 
 }
-.about__container {
-  
-} 
-.about__title {
+.promo__container {
+display: block;
+}
+.promo__title {
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
   max-width: 640px;
@@ -20,7 +21,9 @@
   line-height: 58px;
   font-weight: 400;
 }
-.about__paragraph {
+.promo__paragraph {
+  margin-top: 36px;
+  margin-bottom: 146px;
   max-width: 310px;
   max-height: 32px;
   font-size: 13px;
@@ -28,12 +31,23 @@
   font-weight: 400;
   opacity: 50%;
 }
-.about__button {
+.promo__text-button {
+  text-align: center;
   font-size: 12px;
   line-height: 16px;
   font-weight: 500;
+  color: #FFFFFF;
 }
-.about__image {
+.promo__button {
+  width: 129px;
+  height: 36px;
+  border: 1px solid #FFFFFF;
+  background-color: #073042;
+  border-radius: 3px;
+  opacity: 60%;
+}
+
+.promo__image {
   width: 310px;
   height: 304px;
 

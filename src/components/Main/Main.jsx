@@ -1,7 +1,8 @@
 import './Main.css';
-import About from '../About/About';
-import Project from '../Project/Project';
+import About from '../Promo/Promo';
+import Project from '../AboutProject/AboutProject';
 import Technologies from '../Technologies/Technologies';
+import AboutMe from '../AboutMe/AboutMe';
 
 function Main() {
   return (
@@ -9,6 +10,7 @@ function Main() {
       <About/>
       <Project/>
       <Technologies/>
+      <AboutMe/>
     </div>
   );
 }

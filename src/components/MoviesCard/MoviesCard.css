@@ -1,0 +1,38 @@
+.gallery {
+max-width: 360px;
+border-radius: 6px;
+background-color: #222222;
+margin: 0 auto;
+}
+.gallery__card {
+border: 1px solid beige;
+list-style: none;
+}
+.gallery__block {
+  display: flex;
+  justify-content: space-between;
+}
+.gallery__name {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+}
+.gallery__time {
+color: #8B8B8B;
+font-weight: 400;
+font-size: 13px;
+line-height: 18px;
+
+}
+.gallery__movies {
+max-width: 360px;
+max-height: 200px;
+border: 1px solid fuchsia;
+}
+.gallery__button {
+background-color:#EE3465;
+width: 100px;
+height: 29px;
+border-radius: 30px;
+margin: 0 auto;
+}
