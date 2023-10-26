@@ -1,57 +1,51 @@
-import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
-import PageNotFound from '../PageNotFound/PageNotFound';
-import Header from '../Header/Header';
-import Main from '../Main/Main';
-import Footer from '../Footer/Footer';
-import Register from '../Register/Register';
-import Header1 from '../Header/Header1';
-import SearchForm from '../SearchForm/SearchForm';
-import MoviesCard from "../MoviesCard/MoviesCard"
+import React from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { useState } from "react";
+import "./App.css";
+import Header from "../Header/Header";
+import Main from "../Main/Main";
+import Movies from "../Movies/Movies";
+import SavedMovies from "../SavedMovies/SavedMovies";
+import PageNotFound from "../PageNotFound/PageNotFound";
+import Profile from "../PageWithForm/Profile/Profile";
+import Register from "../PageWithForm/Register/Register";
+import Login from "../PageWithForm/Login/Login";
+import Footer from "../Footer/Footer";
+import { HEADERLOCATION, FOOTERLOCATION } from "../../utils/config/config";
 
 function App() {
+  const location = useLocation();
+
+  const shouldShowHeader = HEADERLOCATION.some(
+    (item) => location.pathname === item
+  );
+  const shouldShowFooter = FOOTERLOCATION.some(
+    (item) => location.pathname === item
+  );
+
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   return (
-    <BrowserRouter>
-    <Header1/>
-    <Header/>
-    <SearchForm/>
-    <MoviesCard/>
-    <Main/>
-    <Routes>
-        <Route path='*' component={<PageNotFound />} />
-        <Route path="/" component={<Main/>} />
-        <Route path="/signup" component={<Register />} />
-    </Routes>
-    <Footer/>
-    </BrowserRouter>
-
-/*
-
- 
-
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <Route path='*' element={<PageNotFound />} />
+    <div className="page">
+      <div className="page__container">
+        {shouldShowHeader && <Header isLoggedIn={isLoggedIn} />}
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/saved-movies" element={<SavedMovies />} />
+          <Route path="/signup" element={<Register />} />
+          <Route
+            path="/signin"
+            element={<Login setIsLoggedIn={setIsLoggedIn} />}
+          />
+          <Route
+            path="/profile"
+            element={<Profile setIsLoggedIn={setIsLoggedIn} />}
+          />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
+        {shouldShowFooter && <Footer />}
+      </div>
     </div>
-       </Routes>
-       </div>
-     */
-
   );
 }
 

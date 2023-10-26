@@ -1,38 +1,161 @@
-.gallery {
-max-width: 360px;
-border-radius: 6px;
-background-color: #222222;
-margin: 0 auto;
+.card {
+  margin: 0;
+  position: relative;
+  list-style-type: none;
+  border-radius: 6px;
+  background-color: #222222;
 }
-.gallery__card {
-border: 1px solid beige;
-list-style: none;
+
+.card__container {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.gallery__block {
+
+.card__container:hover .card__button-save {
+  opacity: 1;
+}
+
+.card__container:hover .card__button-remove {
+  opacity: 1;
+}
+
+.card__image {
+  width: 100%;
+  border-radius: 6px;
+  aspect-ratio: 1.8 / 1;
+  display: block;
+}
+
+.card__button-save {
+  width: 100px;
+  height: 29px;
+  margin: 18px auto;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  padding: 7px 10px;
+  border: none;
+  background-color: #313131;
+  color: #ffffff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 11px;
+  display: none;
+}
+
+.card__button-save_active {
+  display: block;
+}
+
+.card__label-tip {
+  width: 100px;
+  height: 29px;
+  border-radius: 30px;
+  background-image: url("../../images/add.svg");
+  background-color: #ee3465;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px;
+  display: none;
+}
+
+.card__label-tip_active {
+  display: block;
+  margin: 18px auto;
+}
+
+.card__data-container {
   display: flex;
   justify-content: space-between;
+  margin: 18px auto;
 }
-.gallery__name {
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 18px;
-}
-.gallery__time {
-color: #8B8B8B;
-font-weight: 400;
-font-size: 13px;
-line-height: 18px;
 
+.card__title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #fff;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0 0 0 14px;
 }
-.gallery__movies {
-max-width: 360px;
-max-height: 200px;
-border: 1px solid fuchsia;
+
+.card__duration-container {
+  display: flex;
+  width: 52px;
+  height: 18px;
+  border-radius: 3px;
+  margin-right: 14px;
 }
-.gallery__button {
-background-color:#EE3465;
-width: 100px;
-height: 29px;
-border-radius: 30px;
-margin: 0 auto;
+
+.card__duration-value {
+  color: #8b8b8b;
+  text-align: center;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 10px;
+  margin: auto;
+}
+
+.card__button-remove {
+  width: 100px;
+  height: 29px;
+  margin: 18px auto;
+  border-radius: 30px;
+  border: none;
+  background-image: url("../../images/dell.svg");
+  background-color: #313131;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+@media (max-width: 769px) {
+  .card__data-container {
+    margin-top: 24px;
+  }
+
+  .card__title {
+    margin-left: 0;
+  }
+
+  .card__duration-container {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .card__data-container {
+    margin-top: 15px;
+  }
+
+  .card__button-save {
+    top: 10px;
+    right: 10px;
+  }
+
+  .card__label-tip {
+    top: 10px;
+    right: 10px;
+  }
+
+  .card__button-remove {
+    top: 10px;
+    right: 10px;
+  }
 }
