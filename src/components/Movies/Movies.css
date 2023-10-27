@@ -9,12 +9,13 @@
 
 
 .movies__load-button {
-  width: 320px;
+  max-width: 1140px;
+  width: 100%;
   min-height: 36px;
   margin: 0 auto;
   border-radius: 6px;
   border: 1px solid #424242;
-  background-color: transparent;
+  background-color: #2F2F2F;
   cursor: pointer;
   color: #fff;
   text-align: center;
@@ -29,15 +30,24 @@
   opacity: 0.8;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 770px) {
   .movies__button-container {
     padding-top: 60px;
     padding-bottom: 83px;
   }
+  .movies__load-button{
+    width: 708px;
+    height: 36px;
+}
 }
 
 @media (max-width: 420px) {
   .movies__button-container {
-    padding: 60px 40px 69px;
+    padding: 60px 14px 69px;
   }
+  .movies__load-button {
+    width: 300px;
+    height: 36px;
+    padding: 0;
+}
 }

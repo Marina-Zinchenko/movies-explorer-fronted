@@ -3,7 +3,7 @@
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  padding: 95px 70px 78px 70px;
+  padding: 100px 70px 90px 70px;
   box-sizing: border-box;
   display: flexbox;
   justify-content: center;
@@ -17,7 +17,7 @@
   font-size: 22px;
   line-height: 26.63px;
   font-weight: 400;
-  letter-spacing: -4%;
+  letter-spacing: -0.04em;
   border-bottom: 1px solid #dadada;
 }
 .technologies__container {
@@ -37,25 +37,27 @@
   letter-spacing: -0.04em;
 }
 .technologies__paragraph {
-  margin: 26px auto 90px auto;
+  margin: 26px auto 102px auto;
   padding: 0;
   text-align: center;
   max-width: 460px;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
-  letter-spacing: -0.04em;
+  letter-spacing: 0.04em;
 }
 .technologies__nav {
-  margin-top: 10px;
-  margin-bottom: 21px;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
   display: flex;
-  justify-content: baseline;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 .technologies__link {
+  margin: 0;
+  padding: 0;
+  margin-right: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,11 +71,19 @@
   font-size: 14px;
   line-height: 16.94px;
   font-weight: 400;
-  letter-spacing: -4%;
+  letter-spacing: -0.04em;
   cursor: pointer;
 }
 
 @media screen and (max-width: 960px) {
+  .technologies {
+    max-width: 768px;
+    padding: 90px 50px ;
+  }
+  .technologies__container {
+    margin: 80px auto 0 auto;
+    max-width: 600px;
+  }
   .technologies__paragraph {
     margin: 22px auto 83px auto;
     font-size: 12px;
@@ -86,21 +96,36 @@
     line-height: 14.52px;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 760px) {
+  .technologies {
+    max-width: 320px;
+    padding: 55px 14px ;
+  }
+  .technologies__title {
+    font-size: 18px;
+    line-height: 21.78px;
+    padding-bottom: 27px;
+  }
   .technologies__subtitle {
     font-size: 30px;
     line-height: 36.31px;
   }
   .technologies__paragraph {
-    margin: 24px auto 50px auto;
+    margin: 20px auto 40px auto;
     font-size: 11px;
     line-height: 16px;
   }
+  .technologies__container {
+    margin: 63px auto 0 auto;
+  }
   .technologies__nav {
     max-width: 200px;
+    padding: 0;
+    margin: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, auto);
     justify-content: center;
+    gap: 10px;
   }
 }

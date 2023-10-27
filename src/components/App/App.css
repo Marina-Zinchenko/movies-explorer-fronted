@@ -1,5 +1,6 @@
-.App {
+.page {
   min-width: 320px;
+  min-height: 100vh;
   max-width: 1280px;
   margin: 0 auto;
   width: 100%;
@@ -8,4 +9,6 @@
   font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   color: #ffffff;
+  display: flex;
+  flex-direction: column;
 }

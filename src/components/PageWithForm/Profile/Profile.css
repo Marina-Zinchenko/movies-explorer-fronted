@@ -106,7 +106,7 @@
 }
 
 .profile__button-edit:hover {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .profile__button-edit_disabled:disabled {

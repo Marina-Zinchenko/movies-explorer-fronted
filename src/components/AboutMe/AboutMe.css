@@ -3,7 +3,7 @@
   width: 100%;
   background-color: #202020;
   margin: 0 auto;
-  padding: 110px 70px 80px 70px;
+  padding: 120px 70px 80px 70px;
   display: block;
   justify-content: center;
   align-items: normal;
@@ -44,7 +44,7 @@
   font-size: 50px;
   line-height: 58px;
   font-weight: 400;
-  letter-spacing: -4%;
+  letter-spacing: -0.04em;
 }
 .student__paragraph {
   font-size: 14px;
@@ -70,7 +70,7 @@
 
 @media screen and (max-width: 960px) {
   .student {
-    padding: 90px 50px;
+    padding: 90px 50px 30px 50px;
   }
   .student__text {
     font-size: 12px;
@@ -84,14 +84,20 @@
     font-size: 12px;
     line-height: 18px;
   } 
+  .student__foto {
+    width: 255px;
+    height: 307px;
+    border-radius: 10px;
+  }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 760px) {
   .student {
-    padding: 70px 14px;
+    padding: 83px 14px 10px 14px;
   }
   .student__title {
     font-size: 18px;
     line-height: 21.78px;
+    padding-bottom: 30px;
   }
   .student__container {
     margin-top: 60px;
@@ -110,7 +116,17 @@
     line-height: 36.31px;
   }
   .student__paragraph {
+    margin-top: 55px;
     font-size: 11px;
     line-height: 16px;
+    margin: 20px auto;
+  }
+  .student__foto {
+    width: 292px;
+    height: 352px;
+    border-radius: 10px;
+  }
+  .student__gh-page {
+    margin: 30px 0 0 0;
   }
 }

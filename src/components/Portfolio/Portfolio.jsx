@@ -10,6 +10,7 @@ function Portfolio () {
     <a
       href="https://github.com/Marina-Zinchenko/how-to-learn"
       className="portpholio__link"
+      target="_blank" rel="noopener noreferrer"
     >
       Статичный сайт
     </a>
@@ -23,6 +24,7 @@ function Portfolio () {
     <a
       href="https://github.com/Marina-Zinchenko/russian-travel"
       className="portpholio__link"
+      target="_blank" rel="noopener noreferrer"
     >
       Адаптивный сайт
     </a>
@@ -36,6 +38,7 @@ function Portfolio () {
     <a
       href="https://github.com/Marina-Zinchenko/react-mesto-api-full-gha"
       className="portpholio__link"
+      target="_blank" rel="noopener noreferrer"
     >
       Одностраничное приложение
     </a>

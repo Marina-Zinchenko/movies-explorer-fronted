@@ -12,7 +12,12 @@ function Technologies() {
         </p>
         <ul className="technologies__nav">
           <li>
-            <a className="technologies__link" href="https://doka.guide/html/">
+            <a
+              className="technologies__link"
+              href="https://doka.guide/html/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               HTML
             </a>
           </li>
@@ -20,6 +25,8 @@ function Technologies() {
             <a
               className="technologies__link"
               href="https://doka.guide/css/css-rule/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               CSS
             </a>
@@ -28,6 +35,8 @@ function Technologies() {
             <a
               className="technologies__link"
               href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               JS
             </a>
@@ -36,6 +45,8 @@ function Technologies() {
             <a
               className="technologies__link"
               href="https://ru.react.js.org/docs/getting-started.html"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               React
             </a>
@@ -44,17 +55,29 @@ function Technologies() {
             <a
               className="technologies__link"
               href="https://github.com/git-guides"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Git
             </a>
           </li>
           <li>
-            <a className="technologies__link" href="https://expressjs.com/ru/">
+            <a
+              className="technologies__link"
+              href="https://expressjs.com/ru/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Express.js
             </a>
           </li>
           <li>
-            <a className="technologies__link" href="https://www.mongodb.com/">
+            <a
+              className="technologies__link"
+              href="https://www.mongodb.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               mongoDB
             </a>
           </li>

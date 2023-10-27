@@ -26,7 +26,7 @@
 .portpholio__list-element {
   display: flex;
   justify-content: space-between;
-  margin: 14px 0 10px 0;
+  align-items: center;
 }
 .portpholio__line {
   border-bottom: 1px solid #424242;
@@ -35,10 +35,11 @@
   text-decoration: none;
   color: #ffffff;
   padding-bottom: 20px;
+  padding-top: 20px;
   font-weight: 400;
   font-size: 30px;
   line-height: 50px;
-  letter-spacing: -4%;
+  letter-spacing: -0.04em;
 }
 .portpholio__img-link {
   width: 18px;
@@ -46,24 +47,36 @@
   padding: 0;
   margin: 14px 0 10px 0;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .portpholio {
-    padding: 0 50px;
+    padding: 45px 50px;
     margin: 0 auto 80px auto;
   }
   .portpholio__link {
     font-size: 28px;
+    padding-bottom: 17px;
+    padding-top: 17px;
+
   }
   .portpholio__img-link {
     width: 15px;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 667px) {
+  .portpholio {
+    padding: 40px 14px;
+    margin: 0 auto 80px auto;
+  }
+  .portpholio__name {
+    font-size: 14px;
+    padding-bottom: 21px;
+  }
   .portpholio__link {
     font-size: 18px;
+    padding: 10px 0;
   }
   .portpholio__img-link {
-    width: 18px;
-    height: 28px;
+    width: 11 px;
+    height: 13px;
   }
 }

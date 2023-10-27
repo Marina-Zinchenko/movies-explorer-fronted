@@ -17,7 +17,12 @@
 .header__logo {
   max-width: 38px;
   max-height: 38px;
-  object-fit: cover;  
+  object-fit: cover;
+  cursor: pointer;  
+}
+.header__logo:hover {
+  opacity: 0.8;
+  transform: scale(1.13);
 }
 .header__content {
   display: flex;

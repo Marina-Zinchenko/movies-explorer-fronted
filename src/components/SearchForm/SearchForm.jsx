@@ -12,7 +12,7 @@ function SearchForm() {
         </form>
         <>
         <FilterCheckbox/>
-        <label>Короткометражки</label>
+        <label className="search__comit">Короткометражки</label>
         </>
           <div className='search__line' />   
       </section>

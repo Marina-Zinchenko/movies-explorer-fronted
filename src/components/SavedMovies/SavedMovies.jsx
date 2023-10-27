@@ -6,8 +6,7 @@ import filmImage from "../../images/film.jpg";
 
 function SavedMovies() {
   return (
-    <div className="movie-gallery">
-      <section className="saved-movies">
+    <section className="saved-movies">
         <SearchForm />
         <MoviesCardList>
           <MoviesCard
@@ -30,7 +29,6 @@ function SavedMovies() {
           />
         </MoviesCardList>
       </section>
-    </div>
   );
 }
 

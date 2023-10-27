@@ -19,7 +19,8 @@ function AboutMe() {
           </p>
           <NavLink
             className="student__gh-page"
-            href="https://github.com/Marina-Zinchenko"
+            to="https://github.com/Marina-Zinchenko"
+            target="_blank" rel="noopener noreferrer"
           >
             Github
           </NavLink>
