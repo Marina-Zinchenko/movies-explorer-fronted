@@ -1,6 +1,5 @@
 import "./AboutMe.css";
 import myPhoto from "../../images/my-photo.jpeg";
-import image from "../../images/text__COLOR_font-main.svg";
 import { NavLink } from "react-router-dom";
 
 function AboutMe() {
@@ -33,50 +32,6 @@ function AboutMe() {
           />
         </li>
       </ul>
-      <article className="student__portpholio">
-        <h4 className="student__name">Портфолио</h4>
-        <ul className="student__links">
-          <li className="student__list-element student__line">
-            <a
-              href="https://github.com/Marina-Zinchenko/how-to-learn"
-              className="student__link"
-            >
-              Статичный сайт
-            </a>
-            <img
-              className="student__img-link"
-              src={image}
-              alt="Изображение недоступно"
-            />
-          </li>
-          <li className="student__list-element student__line">
-            <a
-              href="https://github.com/Marina-Zinchenko/russian-travel"
-              className="student__link"
-            >
-              Адаптивный сайт
-            </a>
-            <img
-              className="student__img-link"
-              src={image}
-              alt="Изображение недоступно"
-            />
-          </li>
-          <li className="student__list-element">
-            <a
-              href="https://github.com/Marina-Zinchenko/react-mesto-api-full-gha"
-              className="student__link"
-            >
-              Одностраничное приложение
-            </a>
-            <img
-              className="student__img-link"
-              src={image}
-              alt="Изображение недоступно"
-            />
-          </li>
-        </ul>
-      </article>
     </section>
   );
 }

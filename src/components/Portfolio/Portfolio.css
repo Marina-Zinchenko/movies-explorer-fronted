@@ -1,0 +1,69 @@
+.portpholio {
+  max-width: 1280px;
+  width: 100%;
+  background-color: #202020;
+  margin: 0 auto 115px auto;
+  padding: 0 70px;
+  display: block;
+  justify-content: center;
+  align-items: normal;
+  box-sizing: border-box;
+}
+.portpholio__name {
+  margin: 0;
+  padding-bottom: 35px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  color: #8b8b8b;
+}
+.portpholio__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.portpholio__list-element {
+  display: flex;
+  justify-content: space-between;
+  margin: 14px 0 10px 0;
+}
+.portpholio__line {
+  border-bottom: 1px solid #424242;
+}
+.portpholio__link {
+  text-decoration: none;
+  color: #ffffff;
+  padding-bottom: 20px;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: -4%;
+}
+.portpholio__img-link {
+  width: 18px;
+  height: 28px;
+  padding: 0;
+  margin: 14px 0 10px 0;
+}
+@media screen and (max-width: 800px) {
+  .portpholio {
+    padding: 0 50px;
+    margin: 0 auto 80px auto;
+  }
+  .portpholio__link {
+    font-size: 28px;
+  }
+  .portpholio__img-link {
+    width: 15px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .portpholio__link {
+    font-size: 18px;
+  }
+  .portpholio__img-link {
+    width: 18px;
+    height: 28px;
+  }
+}

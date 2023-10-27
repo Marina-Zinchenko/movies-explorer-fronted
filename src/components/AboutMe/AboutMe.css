@@ -3,7 +3,7 @@
   width: 100%;
   background-color: #202020;
   margin: 0 auto;
-  padding: 110px 70px;
+  padding: 110px 70px 80px 70px;
   display: block;
   justify-content: center;
   align-items: normal;
@@ -20,7 +20,7 @@
   border-bottom: 1px solid #dadada;
 }
 .student__container {
-  margin-top: 50px;
+  margin-top: 67px;
   padding: 0;
   list-style: none;
   display: flex;
@@ -31,7 +31,6 @@
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 .student__text {
   font-style: normal;
@@ -55,7 +54,7 @@
 
 .student__gh-page {
   padding: 0;
-  margin: 0;
+  margin: 80px 0 0 0;
   text-decoration: none;
   list-style: none;
   color: #ffffff;
@@ -67,38 +66,6 @@
   width: 270px;
   height: 327px;
   border-radius: 10px;
-}
-.student__name {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 20px;
-  color: #8b8b8b;
-}
-.student__links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.student__list-element {
-  display: flex;
-  justify-content: space-between;
-}
-.student__line {
-  border-bottom: 1px solid #424242;
-}
-.student__link {
-  text-decoration: none;
-  color: #ffffff;
-  padding-bottom: 20px;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 50px;
-  letter-spacing: -4%;
-}
-.student__img-link {
-  width: 29px;
-  height: 60px;
 }
 
 @media screen and (max-width: 960px) {
@@ -116,19 +83,7 @@
   .student__paragraph {
     font-size: 12px;
     line-height: 18px;
-  }
-
-  .student__foto {
-    width: 225px;
-    height: 307px;
-    border-radius: 10px;
-  }
-  .student__link {
-    font-size: 28px;
-  }
-  .student__img-link {
-    width: 27px;
-  }
+  } 
 }
 @media screen and (max-width: 767px) {
   .student {
@@ -157,17 +112,5 @@
   .student__paragraph {
     font-size: 11px;
     line-height: 16px;
-  }
-
-  .student__foto {
-    width: 292px;
-    height: 352px;
-  }
-  .student__link {
-    font-size: 18px;
-  }
-  .student__img-link {
-    width: 18px;
-    height: 28px;
   }
 }
