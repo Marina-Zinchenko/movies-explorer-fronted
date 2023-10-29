@@ -14,14 +14,3 @@ body {
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
 }
-
-.link {
-  text-decoration: none;
-  transition: 2s;
-
-  &:hover {
-    cursor: pointer;
-    opacity: 0.2;
-    transition: 2s;
-  }
-}

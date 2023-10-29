@@ -3,15 +3,16 @@ import "./Technologies.css";
 function Technologies() {
   return (
     <section className="technologies">
-      <h2 className="technologies__title">Технологии</h2>
       <div className="technologies__container">
+      <h2 className="technologies__title">Технологии</h2>
+      <div className="technologies__content">
         <h3 className="technologies__subtitle">7 технологий</h3>
         <p className="technologies__paragraph">
           На курсе веб-разработки мы освоили технологии, которые применили в
           дипломном проекте.
         </p>
         <ul className="technologies__nav">
-          <li>
+          <li className="technologies__nav-link">
             <a
               className="technologies__link"
               href="https://doka.guide/html/"
@@ -21,7 +22,7 @@ function Technologies() {
               HTML
             </a>
           </li>
-          <li>
+          <li className="technologies__nav-link">
             <a
               className="technologies__link"
               href="https://doka.guide/css/css-rule/"
@@ -31,7 +32,7 @@ function Technologies() {
               CSS
             </a>
           </li>
-          <li>
+          <li className="technologies__nav-link">
             <a
               className="technologies__link"
               href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
@@ -41,7 +42,7 @@ function Technologies() {
               JS
             </a>
           </li>
-          <li>
+          <li className="technologies__nav-link">
             <a
               className="technologies__link"
               href="https://ru.react.js.org/docs/getting-started.html"
@@ -51,7 +52,7 @@ function Technologies() {
               React
             </a>
           </li>
-          <li>
+          <li className="technologies__nav-link">
             <a
               className="technologies__link"
               href="https://github.com/git-guides"
@@ -61,7 +62,7 @@ function Technologies() {
               Git
             </a>
           </li>
-          <li>
+          <li className="technologies__nav-link">
             <a
               className="technologies__link"
               href="https://expressjs.com/ru/"
@@ -71,7 +72,7 @@ function Technologies() {
               Express.js
             </a>
           </li>
-          <li>
+          <li className="technologies__nav-link">
             <a
               className="technologies__link"
               href="https://www.mongodb.com/"
@@ -82,6 +83,7 @@ function Technologies() {
             </a>
           </li>
         </ul>
+      </div>
       </div>
     </section>
   );

@@ -5,8 +5,9 @@ import { NavLink } from "react-router-dom";
 function AboutMe() {
   return (
     <section className="student">
+      <div className="student__container">
       <h2 className="student__title">Студент</h2>
-      <ul className="student__container">
+      <ul className="student__content">
         <li className="student__list">
           <h3 className="student__subtitle">Марина</h3>
           <p className="student__text">Веб-разработчик, 32 года</p>
@@ -33,6 +34,7 @@ function AboutMe() {
           />
         </li>
       </ul>
+      </div>
     </section>
   );
 }

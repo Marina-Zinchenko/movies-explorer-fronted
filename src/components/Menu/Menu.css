@@ -67,10 +67,13 @@
   height: 30px;
   border-radius: 6px;
   background: #313131;
+  background-image: url(../../images/icon__COLOR_icon-main.svg);
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  background-position: center;
   border: none;
   cursor: pointer;
   transition: opacity 0.5s;
-  z-index: 0;
 }
 .header__navigation-bar-img {
   opacity: 1 !important;

@@ -87,11 +87,9 @@
   font-style: normal;
   font-weight: 500;
   line-height: 16px;
-  border-radius: 20px;
-  background-color: #313131;
   text-decoration: none;
   padding: 8px 21px;
-  margin-top: 594px;
+  margin-top: 580px;
   display: block;
   transition: opacity 0.5s;
 }
@@ -99,10 +97,35 @@
 .burger-menu__profile-button:hover {
   opacity: 0.8;
 }
+.burger-menu__navigation-bar-icon-button {
+  min-width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.burger-menu__profile-button-icon {
+    margin-left: 13px;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    background: #313131;
+    background-image: url(../../images/icon__COLOR_icon-main.svg);
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.5s;
+  }
+  .burger-menu__navigation-bar-img {
+    opacity: 1 !important;
+    z-index: 2;
+  }
+
 
 @media (max-width: 420px) {
   .burger-menu__profile-button {
-    margin-top: 421px;
+    margin-top: 410px;
   }
 
   .burger-menu__button-close {

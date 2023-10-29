@@ -1,9 +1,12 @@
 .student {
   max-width: 1280px;
-  width: 100%;
   background-color: #202020;
+}
+.student__container {
+  width: calc(100% - 2*70px);
   margin: 0 auto;
-  padding: 120px 70px 80px 70px;
+  padding-top: 110px;
+  padding-bottom: 80px;
   display: block;
   justify-content: center;
   align-items: normal;
@@ -16,10 +19,10 @@
   font-size: 22px;
   line-height: 26.63px;
   font-weight: 400;
-  letter-spacing: -4%;
+  letter-spacing: -0.04em;
   border-bottom: 1px solid #dadada;
 }
-.student__container {
+.student__content {
   margin-top: 67px;
   padding: 0;
   list-style: none;
@@ -37,6 +40,9 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 20px;
+  margin-top: 20px;
+  margin-bottom: 22px;
+  padding: 0;
 }
 .student__subtitle {
   margin: 0;
@@ -50,11 +56,13 @@
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
+  margin: 0;
+  padding: 0;
 }
 
 .student__gh-page {
   padding: 0;
-  margin: 80px 0 0 0;
+  margin: 100px 0 0 0;
   text-decoration: none;
   list-style: none;
   color: #ffffff;
@@ -69,12 +77,16 @@
 }
 
 @media screen and (max-width: 960px) {
-  .student {
-    padding: 90px 50px 30px 50px;
+  .student__container {
+    width: calc(100% - 2*50px);
+    padding-top: 90px;
+    padding-bottom: 30px;
   }
   .student__text {
     font-size: 12px;
     line-height: 28px;
+    margin-top: 10px;
+    margin-bottom: 14px;
   }
   .student__subtitle {
     font-size: 40px;
@@ -84,22 +96,27 @@
     font-size: 12px;
     line-height: 18px;
   } 
+  .student__gh-page {
+    margin-top: 108px;
+  }
   .student__foto {
     width: 255px;
     height: 307px;
     border-radius: 10px;
   }
 }
-@media screen and (max-width: 760px) {
-  .student {
-    padding: 83px 14px 10px 14px;
+@media screen and (max-width: 600px) {
+  .student__container {
+    width: calc(100% - 2*14px);
+    padding-top: 86px;
+    padding-bottom: 10px;
   }
   .student__title {
     font-size: 18px;
     line-height: 21.78px;
-    padding-bottom: 30px;
+    padding-bottom: 28px;
   }
-  .student__container {
+  .student__content {
     margin-top: 60px;
     display: flex;
     flex-direction: column-reverse;
@@ -110,6 +127,8 @@
   .student__text {
     font-size: 11px;
     line-height: 16px;
+    margin-top: 16px;
+    margin-bottom: 10px;
   }
   .student__subtitle {
     font-size: 30px;
@@ -119,14 +138,14 @@
     margin-top: 55px;
     font-size: 11px;
     line-height: 16px;
-    margin: 20px auto;
+    margin: 10px auto;
   }
   .student__foto {
-    width: 292px;
+    width: 290px;
     height: 352px;
     border-radius: 10px;
   }
   .student__gh-page {
-    margin: 30px 0 0 0;
+    margin: 47px 0 0 0;
   }
 }

@@ -1,23 +1,29 @@
-.aboutProject {
+.project {
   background-color: #202020;
   max-width: 1280px;
-  width: 100%;
-  padding: 110px 70px 100px 70px;
-  margin: 0;
+  
+}
+.project__container {
+  width: calc(100% - 2*70px);
+  padding-top: 111px;
+  padding-bottom: 100px;
+  margin: 0 auto;
   box-sizing: border-box;
+  
 }
 
-.aboutProject__title {
+.project__title {
   margin: 0;
   padding-bottom: 23px;
-  width: 100%;
   font-size: 22px;
   line-height: 26.63px;
   font-weight: 400;
   letter-spacing: -0.04em;
   border-bottom: 1px solid #dadada;
 }
-.aboutProject__container {
+.project__content {
+  max-width: 1140px;
+  width: 100%;
   margin: 70px 0 0 0;
   padding: 0;
   list-style: none;
@@ -27,9 +33,11 @@
   row-gap: 110px;
   column-gap: 40px;
 }
-.aboutProject__line {
+.project__line {
+  max-width: 1140px;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 0.75fr 3fr;
   grid-template-rows: repeat(2, 36px);
   box-sizing: border-box;
   font-style: normal;
@@ -39,12 +47,12 @@
   text-align: center;
   margin: 0 auto;
 }
-.aboutProject__list {
+.project__list {
   max-width: 550px;
   width: 100%;
 }
 
-.aboutProject__text {
+.project__text {
   margin: 14px;
   font-style: normal;
   font-weight: 500;
@@ -53,102 +61,97 @@
   text-align: center;
   color: #8b8b8b;
 }
-.aboutProject__subtitle {
+.project__subtitle {
   margin: 0;
   font-size: 20px;
   line-height: 24.2px;
   font-weight: 400;
   letter-spacing: -0.04em;
 }
-.aboutProject__paragraph {
+.project__paragraph {
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   margin: 26px 0 0 0;
 }
-.aboutProject__line-green {
-  width: 228px;
+.project__line-green {
+  max-width: 228px;
   box-sizing: border-box;
   margin: 0;
   padding: 9px;
   color: #000000;
   background-color: #3ddc84;
 }
-.aboutProject__line-grey {
-  width: 912px;
+.project__line-grey {
   margin: 0;
   padding: 9px;
   background-color: #303030;
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 960px) {
-  .aboutProject {
-    max-width: 768px;
-    width: 100%;
-    padding: 90px 48px 85px 48px;
+@media screen and (max-width: 1070px) {
+  .project__container {
+    width: calc(100% - 2*50px);
+    padding-top: 90px;
+    padding-bottom: 85px;
   }
-  .aboutProject__container {
-    row-gap: 90px;
+  .project__content {
+    row-gap: 93px;
     column-gap: 30px;
   }
-  .aboutProject__list {
+  .project__list {
     max-width: 319px;
   }
-  .aboutProject__paragraph {
+  .project__paragraph {
     font-size: 12px;
     line-height: 18px;
+    margin-top: 22px;
   }
-  .aboutProject__line-green {
-    max-width: 140px;
-  }
-  .aboutProject__line-grey {
-    max-width: 528px;
-  } 
 }
 @media screen and (max-width: 700px) {
-  .aboutProject {
-    max-width: 320px;
-    width: 100%;
-    padding: 73px 18px;
+  .project__container {
+    width: calc(100% - 2*18px);
+    padding-top: 70px;
+    padding-bottom: 73px;
   }
-  .aboutProject__line-grey {
-    width: 184px;
-    margin-top: 5px;
-  }
-  .aboutProject__line-green {
-    width: 100px;
-    margin-top: 5px;
-  }
-  .aboutProject__container {
-    margin: 63px 0 0 0;
+  .project__content {
+    margin: 60px 0 0 0;
+    max-width: 282px;
     display: block;
   }
-  .aboutProject__title {
-    padding-bottom: 25px;
+  .project__title {
+    padding-bottom: 27px;
     font-size: 18px;
     line-height: 21.78px;
   }
-  .aboutProject__list {
-    max-width: 284px;
-    margin-bottom: 54px;
+  .project__list {
+    max-width: 282px;
+    margin-bottom: 60px;
   }
-  .aboutProject__subtitle {
+  .project__subtitle {
     font-size: 18px;
     line-height: 21.78px;
+    padding: 0;
   }
-  .aboutProject__paragraph {
+  .project__paragraph {
     font-size: 11px;
-    line-height: 18px;
-    margin-top: 12px;
+    line-height: 16px;
+    margin-top: 15px;
   }
-  .aboutProject__line {
+  .project__line {
+    grid-template-columns: 0.94fr 2fr;
     font-size: 11px;
     line-height: 13.34px;
     text-align: center;
   }
-  .aboutProject__text {
-    margin: 10px;
+  .project__line-green {
+    padding: 11px 0 8px 10px;
+  }
+  .project__line-grey {
+    padding: 11px 0 8px 10px;
+  }
+  .project__text {
+    margin: 9px 0 9px 16px;
     font-size: 11px;
     line-height: 13.34px;
   }

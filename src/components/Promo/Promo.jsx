@@ -5,6 +5,7 @@ function Promo() {
   return (
     <section className="promo">
       <div className="promo__container">
+        <div className="promo__content"> 
         <h1 className="promo__title">
           Учебный проект студента факультета Веб-разработки.
         </h1>
@@ -16,6 +17,7 @@ function Promo() {
         </Link>
       </div>
       <img className="promo__image" src={world} alt="Изображение недоступно" />
+      </div>
     </section>
   );
 }

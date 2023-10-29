@@ -1,9 +1,11 @@
 .portpholio {
   max-width: 1280px;
-  width: 100%;
   background-color: #202020;
-  margin: 0 auto 115px auto;
-  padding: 0 70px;
+}
+.portpholio__container {
+  width: calc(100% - 2*70px);
+  margin: 0 auto;
+  padding-bottom: 105px;
   display: block;
   justify-content: center;
   align-items: normal;
@@ -24,6 +26,7 @@
   margin: 0;
 }
 .portpholio__list-element {
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,8 +37,8 @@
 .portpholio__link {
   text-decoration: none;
   color: #ffffff;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-bottom: 22px;
+  padding-top: 15px;
   font-weight: 400;
   font-size: 30px;
   line-height: 50px;
@@ -45,17 +48,21 @@
   width: 18px;
   height: 28px;
   padding: 0;
-  margin: 14px 0 10px 0;
+  margin: 12px 4px 10px 0;
 }
 @media screen and (max-width: 900px) {
-  .portpholio {
-    padding: 45px 50px;
-    margin: 0 auto 80px auto;
+  .portpholio__container {
+    width: calc(100% - 2*50px);
+    padding-top: 40px;
+    padding-bottom: 105px;
+  }
+  .portpholio__name {
+    padding-bottom: 32px;
   }
   .portpholio__link {
     font-size: 28px;
-    padding-bottom: 17px;
-    padding-top: 17px;
+    padding-bottom: 20px;
+    padding-top: 18px;
 
   }
   .portpholio__img-link {
@@ -63,9 +70,10 @@
   }
 }
 @media screen and (max-width: 667px) {
-  .portpholio {
-    padding: 40px 14px;
-    margin: 0 auto 80px auto;
+  .portpholio__container {
+    width: calc(100% - 2*14px);
+    padding-top: 40px;
+    padding-bottom: 80px;
   }
   .portpholio__name {
     font-size: 14px;
@@ -73,10 +81,10 @@
   }
   .portpholio__link {
     font-size: 18px;
-    padding: 10px 0;
+    padding: 9px 0;
   }
   .portpholio__img-link {
-    width: 11 px;
+    width: 11px;
     height: 13px;
   }
 }

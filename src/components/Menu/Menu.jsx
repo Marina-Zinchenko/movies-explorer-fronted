@@ -3,7 +3,6 @@ import { useState } from "react";
 import BurgerButton from "../BurgerButton/BurgerButton";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import { Link, NavLink } from "react-router-dom";
-import imgHeader from "../../images/icon__COLOR_icon-main.svg";
 
 function Menu () {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
@@ -36,9 +35,8 @@ function Menu () {
       <Link to="/profile" className="header__navigation-bar-button">
         <div className="header__navigation-bar-icon-button">
           <p>Аккаунт</p>
-          <button className="header__navigation-bar-icon">
-            <img src={imgHeader} alt="Логотип аккаунта" />
-          </button>
+          <div className="header__navigation-bar-icon">
+          </div>
         </div>
       </Link>
 

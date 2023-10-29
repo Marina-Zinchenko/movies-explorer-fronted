@@ -24,7 +24,7 @@
   display: flex;
   justify-content: space-between;
   color: #fff;
-  font-family: Inter;
+
   font-size: 11px;
   font-style: normal;
   font-weight: 500;
@@ -101,19 +101,12 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-top: 184px;
   transition: opacity 0.5s;
 }
 
 .profile__button-edit:hover {
   opacity: 0.8;
 }
-
-.profile__button-edit_disabled:disabled {
-  color: #c2c2c2;
-  pointer-events: none;
-}
-
 .profile__button-logout {
   background-color: transparent;
   border: none;
@@ -121,10 +114,9 @@
   color: #ee3465;
   text-align: center;
   font-size: 13px;
-  font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin: 16px auto 0;
+  margin: 16px auto 70px;
   transition: opacity 0.5s;
 }
 
@@ -157,6 +149,7 @@
 
   .profile__button-logout {
     font-size: 12px;
+    margin-bottom: 40px;
   }
 
   .profile__error {

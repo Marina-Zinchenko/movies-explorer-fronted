@@ -52,7 +52,11 @@ function BurgerMenu({ isBurgerMenuOpen, setIsBurgerMenuOpen }) {
             className="burger-menu__profile-button"
             to="/profile"
           >
-            Аккаунт
+            <div className="burger-menu__navigation-bar-icon-button">
+            <p>Аккаунт</p>
+            <div className="burger-menu__profile-button-icon">
+            </div>
+            </div>
           </Link>
         </li>
       </ul>
