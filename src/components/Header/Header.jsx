@@ -13,7 +13,7 @@ function Header({ isLoggedIn }) {
     location === "/saved-movies" ||
     location === "/profile";
   return (
-    <header className={`header ${headerEndpoints ? "header__type-color" : ""}`}>
+    <header className={`header ${headerEndpoints ? "header_type-color" : ""}`}>
       <Link to="/">
         <img className="header__logo" src={logo} alt="Логотип" />
       </Link>
