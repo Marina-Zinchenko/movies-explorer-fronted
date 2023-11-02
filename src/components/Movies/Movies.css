@@ -9,8 +9,7 @@
 
 
 .movies__load-button {
-  max-width: 1140px;
-  width: 100%;
+  width: calc(100% - 2*70px);
   min-height: 36px;
   margin: 0 auto;
   border-radius: 6px;
@@ -36,7 +35,7 @@
     padding-bottom: 83px;
   }
   .movies__load-button{
-    width: 708px;
+    width: 100% - 2*50px;
     height: 36px;
 }
 }

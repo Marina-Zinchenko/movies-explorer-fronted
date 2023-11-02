@@ -4,6 +4,7 @@ function Input({
   name,
   type,
   value,
+  pattern,
   required,
   label,
   onChange,
@@ -11,6 +12,7 @@ function Input({
   minLength,
   maxLength,
   placeholder,
+  disabled,
 }) {
   return (
     <div className="input__container">
@@ -23,11 +25,14 @@ function Input({
         name={name}
         id={name}
         value={value}
+        pattern={pattern}
         onChange={onChange}
         required={required}
         minLength={minLength}
         maxLength={maxLength}
         placeholder={placeholder}
+        disabled={disabled}
+        autoComplete='off'
       />
       <span className="input__error">{validationMessage}</span>
     </div>

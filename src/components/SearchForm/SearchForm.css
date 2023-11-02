@@ -38,6 +38,9 @@
 .search__input::placeholder {
   color: #8b8b8b;
 }
+.search__input_error::placeholder {
+  color: #EE3465;
+}
 
 .search__comit {
   font-size: 13px;

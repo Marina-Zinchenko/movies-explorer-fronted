@@ -1,11 +1,19 @@
 import "./FilterCheckbox.css";
 
-function FilterCheckbox() {
+function FilterCheckbox({ onFilter, isActive }) {
   return (
     <div className="checkbox">
       <label className="checkbox__label">
-        <input type="checkbox" />
-        <span className="checkbox__switch"></span>
+        <input 
+         className="switch"
+         id="switch"
+         type="checkbox"
+         onChange={onFilter}
+         checked={isActive}
+         />
+        <span className="checkbox__switch"
+        htmlFor="switch"
+        ></span>
       </label>
     </div>
   );
