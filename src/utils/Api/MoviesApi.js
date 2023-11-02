@@ -1,7 +1,5 @@
-import { MOVIES_API_URL } from '../config/config';
+import { MOVIES_API_URL } from "../config/config";
 
-
-//Проверка ответа от сервера
 export const checkResponse = (res) => {
   if (!res.ok) {
     return Promise.reject(`Error: ${res.status}`);
@@ -11,10 +9,9 @@ export const checkResponse = (res) => {
 
 export const getMovies = () => {
   return fetch(`${MOVIES_API_URL}`, {
-    method: 'GET',
+    method: "GET",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
-  }).then((res) => checkResponse(res))
-}
- 
+  }).then((res) => checkResponse(res));
+};

@@ -1,7 +1,7 @@
 const HEADER_LOCATION = ["/", "/movies", "/saved-movies", "/profile"];
 const FOOTER_LOCATION = ["/", "/movies", "/saved-movies"];
 
-const BASE_URL = 'http://localhost:3000'; 
+const BASE_URL = 'diplom.zinchenko.mv.nomoredomainsmonster.ru'; 
 const MOVIES_API_URL = 'https://api.nomoreparties.co/beatfilm-movies';
 const CARDS_IMAGE_API_URL = "https://api.nomoreparties.co";
 
