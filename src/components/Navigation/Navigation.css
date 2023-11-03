@@ -30,6 +30,7 @@
 
 .nav__link {
   color: #ffffff;
+  text-decoration: none;
 }
 
 .nav__link-signin {
