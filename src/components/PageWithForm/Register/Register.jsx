@@ -7,8 +7,8 @@ import useFormValidation from '../../../utils/hooks/useFormValidation ';
 function Register ({ handleRegistration, isServerMessageError, isDisabledInput }) {
   const { values, handleChange, errors, isValid } = useFormValidation();
 
-  const onSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = (evt) => {
+    evt.preventDefault();
     handleRegistration(values.name, values.email, values.password);
   };
 
