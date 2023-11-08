@@ -62,7 +62,7 @@ function Movies({ savedMovies, onSaveMovie, onDeleteMovie }) {
         });
     }
   };
-  // начальное состояние чекбокса
+  
   useEffect(() => {
     if (localStorage.getItem("shortMovies") === "true") {
       setIsCheckboxActive(true);
@@ -71,7 +71,7 @@ function Movies({ savedMovies, onSaveMovie, onDeleteMovie }) {
     }
   }, []);
 
-  // загрузка найденных фильмов при открытии страницы
+
   useEffect(() => {
     if (localStorage.getItem("movies")) {
       const movies = JSON.parse(localStorage.getItem("movies"));

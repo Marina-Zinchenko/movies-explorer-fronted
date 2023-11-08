@@ -35,19 +35,18 @@ function App() {
 
   const [savedMovies, setSavedMovies] = useState([]);
 
+  const [isSavMovies, setSavMovies] = useState(false)
 
 
   useEffect(() => {
-    isLoggedIn && Promise.all([mainApi.getUserInfo(), mainApi.getSavedMovies()])
+    if (isLoggedIn) {
+     Promise.all([mainApi.getUserInfo(), mainApi.getSavedMovies()])
       .then(([data, movies]) => {
-        setCurrentUser(data)
+        setCurrentUser(data);
         setSavedMovies(movies.reverse());
       })
-      .catch((err) => {
-        console.log(err)
-      })
-      .finally(() => {
-      })
+      .catch((error) => console.error(`Ошибка в создании страницы ${error}`));
+      }
   }, [isLoggedIn])
 
   const handleRegistration = (name, email, password) => {
@@ -55,6 +54,9 @@ function App() {
     mainApi
       .register(name, email, password)
       .then((res) => {
+        setCurrentUser(name, email)
+        console.log(name)
+        console.log(email)
         if (res) {
           handleLogin(email, password)
         }
@@ -82,7 +84,6 @@ function App() {
       .finally(() => {
         setIsDisabledInput(false)
       })
-
   }
 
   const handleLogout = () => {
@@ -96,8 +97,9 @@ function App() {
     if (token) {
       mainApi
         .checkToken(token)
-        .then((res) => {
-          if (res) {
+        .then((data) => {
+          if (data) {
+            setCurrentUser(data);
             setIsLoggedIn(true);
             navigate(location)
           }
@@ -114,7 +116,7 @@ function App() {
   }, []);
 
   const handleUpdateProfile = ({ name, email }) => {
-    setIsDisabledInput(true)
+  setIsDisabledInput(true)
     mainApi
       .updateProfile({ name, email })
       .then(() => {
@@ -134,6 +136,7 @@ function App() {
       .saveMoviesCard(movieCard)
       .then((movieCard) => {
         setSavedMovies([movieCard, ...savedMovies])
+
       })
       .catch((err) => {
         console.log(err)
@@ -174,14 +177,14 @@ function App() {
   };
 
   return (
+    <CurrentUserContext.Provider value={currentUser}>
     <div className="page">
       <div className="page__container">
-      <CurrentUserContext.Provider value={currentUser}>
-        {shouldShowHeader && <Header isLoggedIn={isLoggedIn} />}
+     {shouldShowHeader && <Header isLoggedIn={isLoggedIn} />} 
         <Routes>
           <Route 
           path="/" 
-          element={<Main />} 
+          element={<Main isLoggedIn={isLoggedIn}/>} 
           />
           <Route 
           path="/movies" 
@@ -239,9 +242,10 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         {shouldShowFooter && <Footer />}
-        </CurrentUserContext.Provider>
+        
       </div>
     </div>
+    </CurrentUserContext.Provider>
   );
 }
 

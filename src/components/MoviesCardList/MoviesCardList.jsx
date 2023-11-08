@@ -20,13 +20,10 @@ import {
 } from '../../utils/config/config';
 
 const MoviesCardList = ({ filteredMovies, savedMovies, onSaveMovie, onDeleteMovie, isSavedFilms, isRequestError, isNotFound, isLoading, isLoadingMoviesSearching }) => {
-
   const location = useLocation().pathname;
-  // количество показываемых карточек
   const [shownMoviesQuantity, setShownMoviesQuantity] = useState(0);
   const [numberMoviesToAdd, setNumberMoviesToAdd] = useState(0)
-
-  // устанавливаем видимое количество карточек на странице в зависимости от разрешения экрана
+  
   const setShownQuantity = () => {
     const display = window.innerWidth;
     if (display > SCREEN_SIZE_DESKTOP) {
@@ -40,13 +37,12 @@ const MoviesCardList = ({ filteredMovies, savedMovies, onSaveMovie, onDeleteMovi
       setNumberMoviesToAdd(0)
     }
   }
-  // количество карточек устанавливается при открытии страницы
+  
   useEffect(() => {
     setShownQuantity();
   }, [isLoadingMoviesSearching]);
 
-
-  // откладываем работу функции в случае изменения ширины экрана в отладчике
+  
   useEffect(() => {
     setTimeout(() => {
       window.addEventListener('resize', setShownQuantity);
@@ -56,7 +52,7 @@ const MoviesCardList = ({ filteredMovies, savedMovies, onSaveMovie, onDeleteMovi
     }
   }, []);
 
-  // функция подгруздки карточек в зависимости от разрешения экрана
+
   const loadMoreMovies = () => {
     const display = window.innerWidth;
     if (display > SCREEN_SIZE_DESKTOP) {
@@ -67,7 +63,6 @@ const MoviesCardList = ({ filteredMovies, savedMovies, onSaveMovie, onDeleteMovi
       setNumberMoviesToAdd(numberMoviesToAdd + MOVIES_ADD_MOBILE);
     }
   }
-
   return (
     <section className="cards">
       {isLoading && <Preloader />}
@@ -108,8 +103,8 @@ const MoviesCardList = ({ filteredMovies, savedMovies, onSaveMovie, onDeleteMovi
                 })}
               </ul>
               <div className="movies__button-container">
-                {filteredMovies.length > numberMoviesToAdd ? (
-                  <button onClick={loadMoreMovies} type="button" className="movies__load-button">Ещё</button>
+                { filteredMovies.length > numberMoviesToAdd 
+                ? ( <button onClick={loadMoreMovies} type="button" className="movies__load-button">Ещё</button>
                 ) : ''}
               </div>
             </>

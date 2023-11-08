@@ -11,29 +11,32 @@ function Profile({
   isServerMessageComplete,
   setIsServerMessageComplete,
   isDisabledInput,
+  setCurrentUser
 }) {
   const [isVisible, setIsVisible] = useState(false);
   const [isDisable, setIsDisabled] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
 
-  const currentUser = useContext(CurrentUserContext);
-
+  const { name, email } = useContext(CurrentUserContext);
   const { values, setValues, handleChange, errors, isValid } = useFormValidation();
-  useEffect(() => {
-    setValues({
-      name: currentUser.name,
-      email: currentUser.email,
-    })
-  }, [currentUser.name, currentUser.email, setValues]);
 
   useEffect(() => {
-    if (currentUser.name !== values.name || currentUser.email !== values.email) {
+     setValues({
+      name: name,
+      email: email,
+    })
+  }, [name, email, setValues]);
+
+ 
+
+  useEffect(() => {
+    if (name !== values.name || email !== values.email) {
       setIsDisabled(true)
     } else {
       setIsDisabled(false)
     }
-  }, [ currentUser.name, currentUser.email, values.name, values.email])
-
+  }, [ name, email, values.name, values.email])
+ 
   const changeVisibility = () => {
     setIsVisible(true);
     setIsServerMessageError('')
@@ -58,7 +61,7 @@ function Profile({
   return (
     <main className="content">
       <section className="profile">
-        <h1 className="profile__name">{`Привет, ${currentUser.name}!`}</h1>
+        <h1 className="profile__name">{`Привет, ${name}!`}</h1>
         <form
           className="profile__form"
           name="profile-form"

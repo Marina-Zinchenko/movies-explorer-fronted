@@ -56,7 +56,7 @@ function Register ({ handleRegistration, isServerMessageError, isDisabledInput }
             value={values.password || ''}
             onChange={handleChange}
             required={true}
-            minLength="8"
+            minLength="6"
             maxLength="30"
             placeholder="Введите пароль"
             validationMessage={errors.password}

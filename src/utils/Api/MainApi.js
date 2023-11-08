@@ -1,4 +1,5 @@
 import { BASE_URL, CARDS_IMAGE_API_URL } from "../config/config";
+
 export const checkResponse = (res) => {
   if (res.ok) {
     return res.json();
@@ -11,7 +12,6 @@ export const checkResponse = (res) => {
   }
 };
 
-// Регистрация пользователя
 export const register = (name, email, password) => {
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",
@@ -23,7 +23,6 @@ export const register = (name, email, password) => {
   }).then((res) => checkResponse(res));
 };
 
-// Авторизация пользователя
 export const login = (email, password) => {
   return fetch(`${BASE_URL}/signin`, {
     method: "POST",
@@ -35,7 +34,6 @@ export const login = (email, password) => {
   }).then((res) => checkResponse(res));
 };
 
-// Проверка валидности токена пользователя
 export const checkToken = (token) => {
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
@@ -47,7 +45,6 @@ export const checkToken = (token) => {
   }).then((res) => checkResponse(res));
 };
 
-// Загрузка информации о пользователе
 export const getUserInfo = () => {
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
@@ -59,7 +56,6 @@ export const getUserInfo = () => {
   }).then((res) => checkResponse(res));
 };
 
-// Редактирование профиля
 export const updateProfile = (data) => {
   return fetch(`${BASE_URL}/users/me`, {
     method: "PATCH",
@@ -74,7 +70,6 @@ export const updateProfile = (data) => {
   }).then((res) => checkResponse(res));
 };
 
-// Получение сохраненных карточек
 export const getSavedMovies = () => {
   return fetch(`${BASE_URL}/movies`, {
     method: "GET",
@@ -85,7 +80,6 @@ export const getSavedMovies = () => {
   }).then((res) => checkResponse(res));
 };
 
-// Cохранение карточки на сервере
 export const saveMoviesCard = (movie) => {
   return fetch(`${BASE_URL}/movies`, {
     method: "POST",
@@ -109,7 +103,6 @@ export const saveMoviesCard = (movie) => {
   }).then((res) => checkResponse(res));
 };
 
-// Удаление карточки с сервера
 export const deleteMoviesCard = (movieId) => {
   return fetch(`${BASE_URL}/movies/${movieId}`, {
     method: "DELETE",
