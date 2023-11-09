@@ -37,41 +37,21 @@
 .card__button-save {
   width: 100px;
   height: 29px;
-  margin: 18px auto;
+  margin: 18px auto; 
   border-radius: 30px;
   border: none;
   cursor: pointer;
-  padding: 7px 10px;
-  border: none;
+  display: block;
+  background-image: url("../../images/save6.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  box-sizing: border-box;
   background-color: #313131;
-  color: #ffffff;
-  text-align: center;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 11px;
-  display: none;
 }
 
 .card__button-save_active {
   display: block;
-}
-
-.card__label-tip {
-  width: 100px;
-  height: 29px;
-  border-radius: 30px;
-  background-image: url("../../images/add.svg");
-  background-color: #ee3465;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 12px;
-  display: none;
-}
-
-.card__label-tip_active {
-  display: block;
-  margin: 18px auto;
+  background-image: url("../../images/save-ok.svg");
 }
 
 .card__data-container {
@@ -144,11 +124,6 @@
   }
 
   .card__button-save {
-    top: 10px;
-    right: 10px;
-  }
-
-  .card__label-tip {
     top: 10px;
     right: 10px;
   }

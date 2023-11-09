@@ -3,7 +3,7 @@ import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import * as moviesApi from "../../utils/Api/MoviesApi";
 import { useEffect, useState } from "react";
-import { filterDuration, filterMovies } from "../../utils/hooks/MoviesFilter";
+import { filterDuration, filterMovies } from "../../utils/moviesFilterFunction";
 
 function Movies({ savedMovies, onSaveMovie, onDeleteMovie }) {
   const [isLoading, setIsLoading] = useState(false);

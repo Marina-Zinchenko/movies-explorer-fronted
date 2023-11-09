@@ -8,26 +8,29 @@ function MoviesCard({
   onDeleteMovie,
   savedMovies,
 }) {
-  const isLiked = savedMovies.some(
-    (saveMovie) => saveMovie.movieId === movie.id
-  );
-  
-  const [isSaved, setIsSaved] = useState(isLiked);
+  const [isCardLike, setIsCardLike] = useState(false);
+ 
   useEffect(() => {
-    setIsSaved(isLiked);
-  }, [isLiked]);
+    if (window.location.pathname === "/movies") {
+      setIsCardLike(
+        savedMovies.some((saveMovie) => saveMovie.movieId === movie.id)
+      );
+    }
+  }, [movie, savedMovies]);
 
   const handleSaveMovie = () => {
-    if (isSaved) {
+    if (isCardLike) {
       onDeleteMovie(movie);
+      setIsCardLike(false);
     } else {
       onSaveMovie(movie);
+      setIsCardLike(true);
     }
-    setIsSaved(!isSaved);
+    setIsCardLike(!isCardLike);
   };
 
   function handleDeleteMovie() {
-    onDeleteMovie(movie);
+    onDeleteMovie(movie, setIsCardLike);
   }
 
   function convertDuration(duration) {
@@ -68,24 +71,12 @@ function MoviesCard({
             alt={movie.nameRU}
           />
         </a>
+        
         {!isSavedFilms ? (
-          <>
-            <button
-              className={`card__button-save ${
-                !isSaved && `card__button-save_active`
-              }`}
-              onClick={handleSaveMovie}
-            >
-              Сохранить
-            </button>
-            <div
-              role="button"
-              onClick={handleSaveMovie}
-              className={`card__label-tip ${
-                isSaved && `card__label-tip_active`
-              }`}
-            />
-          </>
+          <button
+            className={isCardLike ? "card__button-save card__button-save_active" : "card__button-save"}
+            onClick={handleSaveMovie}
+          ></button>
         ) : (
           <button onClick={handleDeleteMovie} className="card__button-remove" />
         )}

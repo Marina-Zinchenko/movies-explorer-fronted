@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { CurrentUserContext} from "../../contexts/CurrentUserContext";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import * as mainApi from "../../utils/Api/MainApi";
 import "./App.css";
@@ -20,77 +20,73 @@ function App() {
   const navigate = useNavigate();
   const location = useLocation().pathname;
 
-  const shouldShowHeader = HEADER_LOCATION.some(
-    (item) => location === item
-  );
-  const shouldShowFooter = FOOTER_LOCATION.some(
-    (item) => location === item
-  );
+  const shouldShowHeader = HEADER_LOCATION.some((item) => location === item);
+  const shouldShowFooter = FOOTER_LOCATION.some((item) => location === item);
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
-  const [isServerMessageError, setIsServerMessageError] = useState('');
-  const [isServerMessageComplete, setIsServerMessageComplete] = useState('');
+  const [isServerMessageError, setIsServerMessageError] = useState("");
+  const [isServerMessageComplete, setIsServerMessageComplete] = useState("");
   const [isDisabledInput, setIsDisabledInput] = useState(false);
 
   const [savedMovies, setSavedMovies] = useState([]);
 
   useEffect(() => {
     if (isLoggedIn) {
-     Promise.all([mainApi.getUserInfo(), mainApi.getSavedMovies()])
-      .then(([data, movies]) => {
-        setCurrentUser(data);
-        setSavedMovies(movies.reverse());
-      })
-      .catch((error) => console.error(`Ошибка в создании страницы ${error}`));
-      }
-  }, [isLoggedIn])
+      Promise.all([mainApi.getUserInfo(), mainApi.getSavedMovies()])
+        .then(([data, movies]) => {
+          setCurrentUser(data);
+          setSavedMovies(movies.reverse());
+        })
+        .catch((error) => console.error(`Ошибка в создании страницы ${error}`));
+    }
+  }, [isLoggedIn]);
 
   const handleRegistration = (name, email, password) => {
-    setIsDisabledInput(true)
+    setIsDisabledInput(true);
     mainApi
       .register(name, email, password)
       .then((res) => {
-        setCurrentUser(name, email)
-        console.log(name)
-        console.log(email)
+        setCurrentUser(name, email);
+        console.log(name);
+        console.log(email);
         if (res) {
-          handleLogin(email, password)
+          handleLogin(email, password);
         }
       })
       .catch((err) => {
-        setIsServerMessageError(err.message)
+        setIsServerMessageError(err.message);
       })
       .finally(() => {
-        setIsDisabledInput(false)
-      })
-  }
+        setIsDisabledInput(false);
+      });
+  };
 
   const handleLogin = (email, password) => {
-    setIsDisabledInput(true)
+    setIsDisabledInput(true);
     mainApi
       .login(email, password)
       .then((data) => {
-        localStorage.setItem('token', data.token);
+        localStorage.setItem("token", data.token);
         setIsLoggedIn(true);
-        navigate('/movies', { replace: true });
+        navigate("/movies", { replace: true });
       })
       .catch((err) => {
-        setIsServerMessageError(err.message)
+        setIsServerMessageError(err.message);
       })
       .finally(() => {
-        setIsDisabledInput(false)
-      })
-  }
+        setIsDisabledInput(false);
+      });
+  };
 
   const handleLogout = () => {
     localStorage.clear();
     setIsLoggedIn(false);
-    navigate('/', { replace: true });
+    navigate("/", { replace: true });
   };
 
   const handleCheckToken = () => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     if (token) {
       mainApi
         .checkToken(token)
@@ -98,13 +94,13 @@ function App() {
           if (data) {
             setCurrentUser(data);
             setIsLoggedIn(true);
-            navigate(location)
+            navigate(location);
           }
         })
         .catch((err) => {
-          console.log(err.status)
+          console.log(err.status);
           handleLogout();
-        })
+        });
     }
   };
 
@@ -113,34 +109,34 @@ function App() {
   }, []);
 
   const handleUpdateProfile = ({ name, email }) => {
-  setIsDisabledInput(true)
+    setIsDisabledInput(true);
     mainApi
       .updateProfile({ name, email })
       .then(() => {
         setCurrentUser({ name, email });
-        setIsServerMessageComplete('Данные успешно обновлены');
+        setIsServerMessageComplete("Данные успешно обновлены");
       })
       .catch((err) => {
-        setIsServerMessageError(err.message)
+        setIsServerMessageError(err.message);
       })
       .finally(() => {
-        setIsDisabledInput(false)
-      })
-  }
+        setIsDisabledInput(false);
+      });
+  };
 
-  const handleSaveMovie = (movieCard) => {
+  const handleSaveMovie = (movieCard, setIsCardLike) => {
     mainApi
       .saveMoviesCard(movieCard)
       .then((movieCard) => {
-        setSavedMovies([movieCard, ...savedMovies])
-
+        setSavedMovies([movieCard, ...savedMovies]);
+        setIsCardLike(true);
       })
       .catch((err) => {
-        console.log(err)
-      })
-  }
+        console.log(err);
+      });
+  };
 
-  const handleDeleteMovie = (movie) => {
+  const handleDeleteMovie = (movie, setIsCardLike) => {
     if (!movie._id) {
       const movieToDelete = savedMovies.find((mov) => {
         return mov.movieId === movie.id;
@@ -153,10 +149,11 @@ function App() {
               return mov._id !== movieToDelete._id;
             })
           );
+          setIsCardLike(false);
         })
         .catch((err) => {
-          console.log(err)
-        })
+          console.log(err);
+        });
     } else {
       mainApi
         .deleteMoviesCard(movie._id)
@@ -166,36 +163,34 @@ function App() {
               return mov._id !== movie._id;
             })
           );
+          setIsCardLike(false);
         })
         .catch((err) => {
-          console.log(err)
-        })
+          console.log(err);
+        });
     }
   };
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-    <div className="page">
-      <div className="page__container">
-     {shouldShowHeader && <Header isLoggedIn={isLoggedIn} />} 
-        <Routes>
-          <Route 
-          path="/" 
-          element={<Main isLoggedIn={isLoggedIn}/>} 
-          />
-          <Route 
-          path="/movies" 
-          element={
-            <ProtectedRoute
-            element={Movies}
-            isLoggedIn={isLoggedIn}
-            savedMovies={savedMovies}
-            onSaveMovie={handleSaveMovie}
-            onDeleteMovie={handleDeleteMovie}
+      <div className="page">
+        <div className="page__container">
+          {shouldShowHeader && <Header isLoggedIn={isLoggedIn} />}
+          <Routes>
+            <Route path="/" element={<Main isLoggedIn={isLoggedIn} />} />
+            <Route
+              path="/movies"
+              element={
+                <ProtectedRoute
+                  element={Movies}
+                  isLoggedIn={isLoggedIn}
+                  savedMovies={savedMovies}
+                  onSaveMovie={handleSaveMovie}
+                  onDeleteMovie={handleDeleteMovie}
+                />
+              }
             />
-          } 
-          />
-          <Route
+            <Route
               path="/saved-movies"
               element={
                 <ProtectedRoute
@@ -203,51 +198,56 @@ function App() {
                   isLoggedIn={isLoggedIn}
                   savedMovies={savedMovies}
                   onDeleteMovie={handleDeleteMovie}
-                />} 
-              />
-         {!isLoggedIn
-            ? (<>
+                />
+              }
+            />
+            {!isLoggedIn ? (
+              <>
+                <Route
+                  path="/signup"
+                  element={
+                    <Register
+                      handleRegistration={handleRegistration}
+                      isServerMessageError={isServerMessageError}
+                      isDisabledInput={isDisabledInput}
+                      loggedIn={isLoggedIn}
+                    />
+                  }
+                />
+                <Route
+                  path="/signin"
+                  element={
+                    <Login
+                      handleLogin={handleLogin}
+                      isServerMessageError={isServerMessageError}
+                      isDisabledInput={isDisabledInput}
+                      loggedIn={isLoggedIn}
+                    />
+                  }
+                />
+              </>
+            ) : null}
             <Route
-              path="/signup"
-              element={<Register
-                handleRegistration={handleRegistration}
-                isServerMessageError={isServerMessageError}
-                isDisabledInput={isDisabledInput}
-                loggedIn={isLoggedIn}
-              />}
-           />
-          <Route
-              path="/signin"
-              element={<Login
-                handleLogin={handleLogin}
-                isServerMessageError={isServerMessageError}
-                isDisabledInput={isDisabledInput}
-                loggedIn={isLoggedIn}
-              />}
-           />
-              </>)
-            : null}
-          <Route
-            path="/profile"
-            element={
-              <ProtectedRoute
-                element={Profile}
-                isLoggedIn={isLoggedIn}
-                handleLogout={handleLogout}
-                handleUpdateProfile={handleUpdateProfile}
-                isServerMessageError={isServerMessageError}
-                setIsServerMessageError={setIsServerMessageError}
-                isServerMessageComplete={isServerMessageComplete}
-                setIsServerMessageComplete={setIsServerMessageComplete}
-                isDisabledInput={isDisabledInput}
-                />}
-          />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-        {shouldShowFooter && <Footer />}
-        
+              path="/profile"
+              element={
+                <ProtectedRoute
+                  element={Profile}
+                  isLoggedIn={isLoggedIn}
+                  handleLogout={handleLogout}
+                  handleUpdateProfile={handleUpdateProfile}
+                  isServerMessageError={isServerMessageError}
+                  setIsServerMessageError={setIsServerMessageError}
+                  isServerMessageComplete={isServerMessageComplete}
+                  setIsServerMessageComplete={setIsServerMessageComplete}
+                  isDisabledInput={isDisabledInput}
+                />
+              }
+            />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+          {shouldShowFooter && <Footer />}
+        </div>
       </div>
-    </div>
     </CurrentUserContext.Provider>
   );
 }

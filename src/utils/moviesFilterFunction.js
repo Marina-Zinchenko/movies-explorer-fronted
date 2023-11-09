@@ -1,4 +1,4 @@
-import { SHORT_MOVIES_DURATION } from "../config/config";
+import { SHORT_MOVIES_DURATION } from "./config/config";
 
 //фильтрация фильмов по параметрам запроса
 export function filterMovies(movies, query) {
