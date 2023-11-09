@@ -9,6 +9,7 @@
 
 
 .movies__load-button {
+  display: none;
   width: calc(100% - 2*70px);
   min-height: 36px;
   margin: 0 auto;
@@ -23,6 +24,10 @@
   font-weight: 500;
   line-height: normal;
   transition: all 0.5s;
+}
+
+.movies__load-button-open {
+  display: block;
 }
 
 .movies__load-button:hover {

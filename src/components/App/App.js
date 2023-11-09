@@ -35,9 +35,6 @@ function App() {
 
   const [savedMovies, setSavedMovies] = useState([]);
 
-  const [isSavMovies, setSavMovies] = useState(false)
-
-
   useEffect(() => {
     if (isLoggedIn) {
      Promise.all([mainApi.getUserInfo(), mainApi.getSavedMovies()])
@@ -208,12 +205,15 @@ function App() {
                   onDeleteMovie={handleDeleteMovie}
                 />} 
               />
+         {!isLoggedIn
+            ? (<>
             <Route
               path="/signup"
               element={<Register
                 handleRegistration={handleRegistration}
                 isServerMessageError={isServerMessageError}
                 isDisabledInput={isDisabledInput}
+                loggedIn={isLoggedIn}
               />}
            />
           <Route
@@ -222,8 +222,11 @@ function App() {
                 handleLogin={handleLogin}
                 isServerMessageError={isServerMessageError}
                 isDisabledInput={isDisabledInput}
+                loggedIn={isLoggedIn}
               />}
            />
+              </>)
+            : null}
           <Route
             path="/profile"
             element={

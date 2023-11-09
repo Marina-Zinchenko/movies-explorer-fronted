@@ -23,7 +23,8 @@ const MoviesCardList = ({ filteredMovies, savedMovies, onSaveMovie, onDeleteMovi
   const location = useLocation().pathname;
   const [shownMoviesQuantity, setShownMoviesQuantity] = useState(0);
   const [numberMoviesToAdd, setNumberMoviesToAdd] = useState(0)
-  
+  const [butAdd, setButAdd] = useState(false);
+
   const setShownQuantity = () => {
     const display = window.innerWidth;
     if (display > SCREEN_SIZE_DESKTOP) {
@@ -52,11 +53,19 @@ const MoviesCardList = ({ filteredMovies, savedMovies, onSaveMovie, onDeleteMovi
     }
   }, []);
 
+  useEffect(() =>{
+    let filmsOnPage = document.getElementsByClassName('card').length
+    if (filmsOnPage < filteredMovies.length) {
+        setButAdd(true)
+    } else{
+        setButAdd(false)
+    }
+  });
 
   const loadMoreMovies = () => {
     const display = window.innerWidth;
     if (display > SCREEN_SIZE_DESKTOP) {
-      setNumberMoviesToAdd(numberMoviesToAdd + MOVIES_ADD_DESKTOP);
+      setNumberMoviesToAdd(numberMoviesToAdd + MOVIES_ADD_DESKTOP)
     } else if (display > SCREEN_SIZE_MIN_TABLET && display < SCREEN_SIZE_MAX_TABLET) {
       setNumberMoviesToAdd(numberMoviesToAdd + MOVIES_ADD_MOBILE);
     } else if (display < SCREEN_SIZE_MOBILE) {
@@ -104,7 +113,7 @@ const MoviesCardList = ({ filteredMovies, savedMovies, onSaveMovie, onDeleteMovi
               </ul>
               <div className="movies__button-container">
                 { filteredMovies.length > numberMoviesToAdd 
-                ? ( <button onClick={loadMoreMovies} type="button" className="movies__load-button">Ещё</button>
+                ? ( <button onClick={loadMoreMovies} type="button" className={butAdd ? "movies__load-button  movies__load-button-open" : "movies__load-button"}>Ещё</button>
                 ) : ''}
               </div>
             </>
