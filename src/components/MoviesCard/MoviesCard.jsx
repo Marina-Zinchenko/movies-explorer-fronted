@@ -1,5 +1,4 @@
 import "./MoviesCard.css";
-import { useState, useEffect } from "react";
 
 function MoviesCard({
   movie,
@@ -8,29 +7,17 @@ function MoviesCard({
   onDeleteMovie,
   savedMovies,
 }) {
-  const [isCardLike, setIsCardLike] = useState(false);
- 
-  useEffect(() => {
-    if (window.location.pathname === "/movies") {
-      setIsCardLike(
-        savedMovies.some((saveMovie) => saveMovie.movieId === movie.id)
-      );
-    }
-  }, [movie, savedMovies]);
-
+  const isCardLike = savedMovies.some((saveMovie) => saveMovie.movieId === movie.id);
   const handleSaveMovie = () => {
     if (isCardLike) {
       onDeleteMovie(movie);
-      setIsCardLike(false);
     } else {
       onSaveMovie(movie);
-      setIsCardLike(true);
     }
-    setIsCardLike(!isCardLike);
   };
 
   function handleDeleteMovie() {
-    onDeleteMovie(movie, setIsCardLike);
+    onDeleteMovie(movie);
   }
 
   function convertDuration(duration) {

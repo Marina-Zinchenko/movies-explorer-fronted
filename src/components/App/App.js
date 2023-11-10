@@ -124,19 +124,18 @@ function App() {
       });
   };
 
-  const handleSaveMovie = (movieCard, setIsCardLike) => {
+  const handleSaveMovie = (movieCard) => {
     mainApi
       .saveMoviesCard(movieCard)
       .then((movieCard) => {
         setSavedMovies([movieCard, ...savedMovies]);
-        setIsCardLike(true);
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  const handleDeleteMovie = (movie, setIsCardLike) => {
+  const handleDeleteMovie = (movie) => {
     if (!movie._id) {
       const movieToDelete = savedMovies.find((mov) => {
         return mov.movieId === movie.id;
@@ -149,7 +148,6 @@ function App() {
               return mov._id !== movieToDelete._id;
             })
           );
-          setIsCardLike(false);
         })
         .catch((err) => {
           console.log(err);
@@ -163,7 +161,6 @@ function App() {
               return mov._id !== movie._id;
             })
           );
-          setIsCardLike(false);
         })
         .catch((err) => {
           console.log(err);
